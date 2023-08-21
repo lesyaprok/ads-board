@@ -56,6 +56,11 @@ body {
 .login-button__text {
   @extend %text-normal-shared;
   color: #fff;
+  transition: all 0.3s ease-in; 
+}
+
+.login-button__text:hover {
+  color: $blue;
 }
 
 .header-top__add-button {
@@ -71,6 +76,11 @@ body {
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.header-top__add-button:hover {
+  background-color:rgb(59, 113, 201);
 }
 
 .add-button__icon {
@@ -84,7 +94,8 @@ body {
 
 .header-bottom-container {
   display: flex;
-  justify-content: space-between;
+  justify-items: stretch;
+  padding: 24px 0;
 }
 
 .header-bottom__title {
@@ -100,9 +111,11 @@ body {
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
+  margin: 0 12px 0 24px;
   background: transparent;
   border-radius: 4px;
   border: 1px solid $blue;
+  cursor: pointer;
 }
 
 .categories-button__text {
@@ -111,16 +124,16 @@ body {
   color: $blue;
 }
 
+.header-bottom__search {
+  display: flex;
+}
+
 .search__input {
   padding: 8px 12px;
   border-radius: 4px 0px 0px 4px;
   border: 1px solid #CBD5E1;
   color: $lightgrey;
-}
-
-
-.header-bottom__search {
-  display: flex;
+  width: 734px;
 }
 
 .search__search-button {
@@ -133,6 +146,12 @@ body {
   border-radius: 0px 4px 4px 0px;
   border: none;
   background: #3B82F6;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.search__search-button:hover {
+  background: #3474da;
 }
 
 .search-button__icon {
@@ -169,7 +188,15 @@ body {
 }
 
 .card__img {
+  display: inline-block;
   max-width: 306px;
+  overflow: hidden;
+  img {
+    transition: 1s;
+  }
+  img:hover {
+    transform: scale(1.2);
+  }
 }
 
 .info__title {
@@ -195,11 +222,23 @@ body {
   .section__title {
     text-align: center;
   }
+  .header-bottom__search {
+    width: 500px;
+  }
 }
 
 @media screen and (max-width:992px) {
   .container {
     max-width: 720px;
+  }
+  .header-bottom-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-bottom__search {
+    width: 100%;
   }
 }
 
@@ -214,3 +253,4 @@ body {
     max-width: 90vw;
   }
 }
+
